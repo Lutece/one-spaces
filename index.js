@@ -1,1 +1,3 @@
-console.log('one-spaces');
+export default function() {
+  console.log('one-spaces');
+}
