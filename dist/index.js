@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 0.1.3
+ * @version 0.2.1
  * @name one-spaces
  */
 (function (global, factory) {
@@ -9,8 +9,8 @@
   (global = global || self, global.OneSpaces = factory());
 }(this, (function () { 'use strict';
 
-  function index() {
-    console.log('one-spaces');
+  function index () {
+      console.log('one-spaces');
   }
 
   return index;
