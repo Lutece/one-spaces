@@ -1,8 +1,8 @@
 {
   "name": "one-spaces",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "A tiny module for making className 😎",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "homepage": "https://github.com/TroyTae/one-spaces",
   "author": {
     "name": "TroyTae",
@@ -21,15 +21,14 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "rollup"
+    "build": "rollup --c rollup.config.js"
   },
   "license": "MIT",
   "keywords": [
-    "front-end",
     "css",
     "tiny",
     "classes",
-    "className",
-    "classnames"
+    "classnames",
+    "className"
   ]
 }
