@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 0.0.3
+ * @version 0.1.2
  * @name one-spaces
  */
 (function (global, factory) {

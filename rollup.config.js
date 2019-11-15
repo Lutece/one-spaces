@@ -11,7 +11,7 @@ const output = {
 
 const createConfig = (isProd) => {
   return {
-    input: 'index.js',
+    input: 'src/index.js',
     output: {
       ...output,
       compact: isProd,
