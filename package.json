@@ -1,6 +1,6 @@
 {
   "name": "one-spaces",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A tiny module for making className 😎",
   "main": "dist/index.min.js",
   "homepage": "https://github.com/TroyTae/one-spaces",
@@ -17,7 +17,7 @@
     "url": "https://github.com/TroyTae/one-spaces/issues"
   },
   "devDependencies": {
-    "rollup": "^1.26.5",
+    "rollup": "^1.27.0",
     "typescript": "^3.7.2",
     "rollup-plugin-typescript2": "^0.25.2"
   },
