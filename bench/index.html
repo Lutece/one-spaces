@@ -2,43 +2,16 @@
 
 <html lang="en">
   <head>
-    <title>benchmark</title>
+    <title>one-spaces benchmark</title>
     <base href="./">
     <meta charset="UTF-8">
-    <meta name="description" content="Author: Troy Tae, Category: Resume">
+    <meta name="description" content="Benchmark test for one-spaces">
     <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0'>
   </head>
   <body>
-
-  <style>
-    .red {
-      background: red;
-    }
-    .blue {
-      background: blue;
-    }
-  </style>
-  <div class="blue red"></div>
-  <div class="red blue"></div>
-
+  <script src="./node_modules/classnames/index.js"></script>
+  <script src="./node_modules/clsx/dist/clsx.min.js"></script>
   <script src="./node_modules/lodash/lodash.js"></script>
   <script src="./node_modules/benchmark/benchmark.js"></script>
-  <script>
-    var suite = new Benchmark.Suite;
-    suite
-      .add('string', function() {
-        var a = '';
-        a += (' ' + 'a');
-        a += (' ' + 'a');
-        a += (' ' + 'a');
-      })
-      .on('cycle', function(event) {
-        console.log(String(event.target));
-      })
-      .on('complete', function() {
-        console.log('Fastest is ' + this.filter('fastest').map('name'));
-      })
-      .run({ 'async': true });
-  </script>
   </body>
 </html>
