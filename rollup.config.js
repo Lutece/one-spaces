@@ -1,26 +1,19 @@
 const pkg = require('./package.json');
 const typescript = require('rollup-plugin-typescript2');
 
-const output = {
-  name: pkg.name
-    .split('-')
-    .map((v) => v.slice(0, 1).toUpperCase() + v.slice(1))
-    .join(''),
-  format: 'umd',
-  banner: `/**\n * @author ${pkg.author.name}\n * @version ${pkg.version}\n * @name ${pkg.name}\n */`
-};
-
-const createConfig = (isProd) => {
+const createConfig = (isNode) => {
   return {
     input: 'src/index.ts',
     output: {
-      ...output,
-      compact: isProd,
-      file: pkg.main.replace(isProd ? '' : '.min', '')
+      banner: `/**\n * @author ${pkg.author.name}\n * @version ${pkg.version}\n * @name ${pkg.name}\n */`,
+      compact: isNode,
+      format: isNode ? 'cjs' : 'iife',
+      file: isNode ? pkg.main : `dist/${pkg.name}.js`,
+      name: pkg.name.split('-').map((v) => v.slice(0, 1).toUpperCase() + v.slice(1)).join(''),
     },
     plugins: [
-      typescript({ clean: true })
-    ]
+      typescript({ clean: true }),
+    ].filter(Boolean)
   };
 };
 

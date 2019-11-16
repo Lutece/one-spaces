@@ -9,7 +9,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0'>
   </head>
   <body>
-  <script src="../dist/index.min.js"></script>
+  <script src="../dist/one-spaces.js"></script>
   <script src="./node_modules/classnames/index.js"></script>
   <script src="./node_modules/clsx/dist/clsx.min.js"></script>
   <script src="./node_modules/lodash/lodash.js"></script>
@@ -48,46 +48,46 @@
     runTest('array', function (fn) {
       fn(['red', 'blue', 'green']);
     });
-    runTest('object', function (fn) {
-      fn({
-        active: true,
-        inactive: false,
-        special: true
-      });
-    });
-    runTest('array arguments', function (fn) {
-      fn(
-        ['red', 'blue', ['yellow']],
-        ['green', []],
-        []
-      );
-    });
-    runTest('object arguments', function (fn) {
-      fn({
-        active: true,
-        inactive: false
-      }, {
-        special: true
-      });
-    });
-    runTest('comprehensive', function (fn) {
-      fn(
-        'className',
-        [
-          'red',
-          'blue',
-          ['yellow'],
-          {special: true}
-        ],
-        'classnames',
-        {
-          active: true,
-          inactive: false
-        },
-        undefined,
-        null
-      );
-    });
+    // runTest('object', function (fn) {
+    //   fn({
+    //     active: true,
+    //     inactive: false,
+    //     special: true
+    //   });
+    // });
+    // runTest('array arguments', function (fn) {
+    //   fn(
+    //     ['red', 'blue', ['yellow']],
+    //     ['green', []],
+    //     []
+    //   );
+    // });
+    // runTest('object arguments', function (fn) {
+    //   fn({
+    //     active: true,
+    //     inactive: false
+    //   }, {
+    //     special: true
+    //   });
+    // });
+    // runTest('comprehensive', function (fn) {
+    //   fn(
+    //     'className',
+    //     [
+    //       'red',
+    //       'blue',
+    //       ['yellow'],
+    //       {special: true}
+    //     ],
+    //     'classnames',
+    //     {
+    //       active: true,
+    //       inactive: false
+    //     },
+    //     undefined,
+    //     null
+    //   );
+    // });
   </script>
   </body>
 </html>
