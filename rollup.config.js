@@ -1,4 +1,5 @@
 const pkg = require('./package.json');
+const {terser} = require('rollup-plugin-terser');
 const typescript = require('rollup-plugin-typescript2');
 
 const createConfig = (isNode) => {
@@ -13,6 +14,7 @@ const createConfig = (isNode) => {
     },
     plugins: [
       typescript({ clean: true }),
+      isNode ? null : terser()
     ].filter(Boolean)
   };
 };
