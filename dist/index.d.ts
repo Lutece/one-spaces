@@ -1,1 +1,1 @@
-export default function (): IArguments;
+export default function (): string;

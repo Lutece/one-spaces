@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 0.3.5
+ * @version 0.4.1
  * @name one-spaces
  */
 (function (global, factory) {
@@ -10,7 +10,12 @@
 }(this, (function () { 'use strict';
 
   function index () {
-      return arguments;
+      var className = '';
+      var i = arguments.length;
+      while (i--) {
+          className += (' ' + arguments[i]);
+      }
+      return className;
   }
 
   return index;
