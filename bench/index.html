@@ -15,24 +15,6 @@
   <script src="./node_modules/lodash/lodash.js"></script>
   <script src="./node_modules/benchmark/benchmark.js"></script>
   <script>
-    // console.log(OneSpaces(
-    //   'className',
-    //   [
-    //     'red',
-    //     'blue',
-    //     ['yellow'],
-    //     {special: true}
-    //   ],
-    //   'classnames',
-    //   {
-    //     active: true,
-    //     inactive: false
-    //   },
-    //   undefined,
-    //   null
-    // ));
-
-
     const runTest = function (name, fn) {
       (new Benchmark.Suite)
         .add('classnames', function() { fn(classNames); })
@@ -58,51 +40,15 @@
             ' for ' + name + ' test'
           );
         })
-        // .run();
+        .run();
     };
-
-
-
-    // var a = 'object';
-    // (new Benchmark.Suite)
-    //   .add('const', function() {
-    //     var obj = {a:1};
-    //     if (typeof obj === a) {}
-    //   })
-    //   .add('literal', function() {
-    //     var obj = {a:1};
-    //     if (typeof obj === 'object') {}
-    //   })
-    //   .on('start', function() {
-    //     console.log(
-    //       Array(50)
-    //         .fill(null)
-    //         .map(function() {
-    //           return '-';
-    //         })
-    //         .join('')
-    //     );
-    //   })
-    //   .on('cycle', function(event) {
-    //     console.log(String(event.target));
-    //   })
-    //   .on('complete', function() {
-    //     console.log(
-    //       'Fastest is ' +
-    //       this.filter('fastest').map('name') +
-    //       ' for ' + name + ' test'
-    //     );
-    //   })
-    //   .run({ async: true });
-
-
 
     runTest('arguments', function (fn) {
       fn('box', 'wrapper', 'container');
     });
-    // runTest('array', function (fn) {
-    //   fn(['red', 'blue', 'green']);
-    // });
+    runTest('array', function (fn) {
+      fn(['red', 'blue', 'green']);
+    });
     runTest('object', function (fn) {
       fn({
         active: true,
@@ -110,13 +56,13 @@
         special: true
       });
     });
-    // runTest('array arguments', function (fn) {
-    //   fn(
-    //     ['red', 'blue', ['yellow']],
-    //     ['green', []],
-    //     []
-    //   );
-    // });
+    runTest('array arguments', function (fn) {
+      fn(
+        ['red', 'blue', ['yellow']],
+        ['green', []],
+        []
+      );
+    });
     runTest('object arguments', function (fn) {
       fn({
         active: true,
@@ -125,24 +71,24 @@
         special: true
       });
     });
-    // runTest('comprehensive', function (fn) {
-    //   fn(
-    //     'className',
-    //     [
-    //       'red',
-    //       'blue',
-    //       ['yellow'],
-    //       {special: true}
-    //     ],
-    //     'classnames',
-    //     {
-    //       active: true,
-    //       inactive: false
-    //     },
-    //     undefined,
-    //     null
-    //   );
-    // });
+    runTest('comprehensive', function (fn) {
+      fn(
+        'className',
+        [
+          'red',
+          'blue',
+          ['yellow'],
+          {special: true}
+        ],
+        'classnames',
+        {
+          active: true,
+          inactive: false
+        },
+        undefined,
+        null
+      );
+    });
   </script>
   </body>
 </html>

@@ -1,10 +1,3 @@
-/**
- * @author TroyTae
- * @version 0.7.2
- * @name one-spaces
- */
-'use strict';
-
 function isString(str) {
   return typeof str === 'string';
 }
@@ -13,7 +6,7 @@ function spaceAfterClassName(className) {
   return className + ' ';
 }
 
-function index () {
+export default function () {
   var
     i = arguments.length,
     key,
@@ -45,5 +38,3 @@ function index () {
   }
   return className;
 }
-
-module.exports = index;
