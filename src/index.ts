@@ -1,3 +1,5 @@
+const OBJECT_TYPE_LITERAL = 'object';
+
 export default function() {
   let k;
   let argument;
@@ -5,7 +7,7 @@ export default function() {
   let i = arguments.length;
   while (i--) {
     argument = arguments[i];
-    if (typeof argument === 'object') {
+    if (typeof argument === OBJECT_TYPE_LITERAL) {
       for (k in argument) {
         if (argument[k]) {
           className += (' ' + k);

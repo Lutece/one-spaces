@@ -1,16 +1,17 @@
 /**
  * @author TroyTae
- * @version 0.6.1
+ * @version 0.6.2
  * @name one-spaces
  */
-'use strict';function index () {
+'use strict';var OBJECT_TYPE_LITERAL = 'object';
+function index () {
     var k;
     var argument;
     var className = '';
     var i = arguments.length;
     while (i--) {
         argument = arguments[i];
-        if (typeof argument === 'object') {
+        if (typeof argument === OBJECT_TYPE_LITERAL) {
             for (k in argument) {
                 if (argument[k]) {
                     className += (' ' + k);
