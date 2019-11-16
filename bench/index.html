@@ -13,5 +13,79 @@
   <script src="./node_modules/clsx/dist/clsx.min.js"></script>
   <script src="./node_modules/lodash/lodash.js"></script>
   <script src="./node_modules/benchmark/benchmark.js"></script>
+  <script>
+    const runTest = function (name, fn) {
+      (new Benchmark.Suite)
+        .add('classnames', function() { fn(classNames); })
+        .add('clsx', function() { fn(clsx); })
+        .on('start', function() {
+          console.log(
+            Array(50)
+              .fill(null)
+              .map(function() {
+                return '-';
+              })
+              .join('')
+          );
+        })
+        .on('cycle', function(event) {
+          console.log(String(event.target));
+        })
+        .on('complete', function() {
+          console.log(
+            'Fastest is ' +
+            this.filter('fastest').map('name') +
+            ' for ' + name + ' test'
+          );
+        })
+        .run();
+    };
+    runTest('arguments', function (fn) {
+      fn('box', 'wrapper', 'container');
+    });
+    runTest('array', function (fn) {
+      fn(['red', 'blue', 'green']);
+    });
+    runTest('object', function (fn) {
+      fn({
+        active: true,
+        inactive: false,
+        special: true
+      });
+    });
+    runTest('array arguments', function (fn) {
+      fn(
+        ['red', 'blue', ['yellow']],
+        ['green', []],
+        []
+      );
+    });
+    runTest('object arguments', function (fn) {
+      fn({
+        active: true,
+        inactive: false
+      }, {
+        special: true
+      });
+    });
+    runTest('comprehensive', function (fn) {
+      fn(
+        'className',
+        [
+          'red',
+          'blue',
+          ['yellow'],
+          {special: true}
+        ],
+        'classnames',
+        {
+          active: true,
+          inactive: false
+        },
+        undefined,
+        null
+      );
+    });
+  </script>
   </body>
 </html>
