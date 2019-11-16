@@ -10,13 +10,20 @@ function OneSpaces(...args: Array<string | object | Arguments>) {
   while (i--) {
     argument = arguments[i];
     if (typeof argument === OBJECT_TYPE_LITERAL) {
-      for (k in argument) {
-        if (argument[k]) {
-          className += (' ' + k);
+      if (Array.isArray(argument)) {
+        k = argument.length;
+        while (k--) {
+          className += ` ${OneSpaces(argument[k])}`;
+        }
+      } else {
+        for (k in argument) {
+          if (argument[k]) {
+            className += ` ${k}`;
+          }
         }
       }
     } else {
-      className += (' ' + argument);
+      className += ` ${argument}`;
     }
   }
   return className;

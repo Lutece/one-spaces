@@ -15,6 +15,23 @@
   <script src="./node_modules/lodash/lodash.js"></script>
   <script src="./node_modules/benchmark/benchmark.js"></script>
   <script>
+    // console.log(OneSpaces(
+    //   'className',
+    //   [
+    //     'red',
+    //     'blue',
+    //     ['yellow'],
+    //     {special: true}
+    //   ],
+    //   'classnames',
+    //   {
+    //     active: true,
+    //     inactive: false
+    //   },
+    //   undefined,
+    //   null
+    // ));
+
 
     const runTest = function (name, fn) {
       (new Benchmark.Suite)
@@ -41,7 +58,7 @@
             ' for ' + name + ' test'
           );
         })
-        .run();
+        // .run();
     };
 
 
