@@ -1,6 +1,8 @@
+type Arguments = Array<string | object | Arguments>;
+
 const OBJECT_TYPE_LITERAL = 'object';
 
-export default function() {
+function OneSpaces(...args: Array<string | object | Arguments>) {
   let k;
   let argument;
   let className = '';
@@ -19,3 +21,5 @@ export default function() {
   }
   return className;
 }
+
+export default OneSpaces;

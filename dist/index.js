@@ -1,10 +1,14 @@
 /**
  * @author TroyTae
- * @version 0.6.2
+ * @version 0.6.3
  * @name one-spaces
  */
 'use strict';var OBJECT_TYPE_LITERAL = 'object';
-function index () {
+function OneSpaces() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
     var k;
     var argument;
     var className = '';
@@ -23,4 +27,4 @@ function index () {
         }
     }
     return className;
-}module.exports=index;
+}module.exports=OneSpaces;
