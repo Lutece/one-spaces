@@ -1,8 +1,7 @@
 {
   "devDependencies": {
-    "benchmark": "^2.1.4"
-  },
-  "scripts": {
-    "build": "rollup --c rollup.config.js"
+    "benchmark": "^2.1.4",
+    "classnames": "^2.2.6",
+    "classcat": "^4.0.2"
   }
 }
