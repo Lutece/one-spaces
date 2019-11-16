@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 0.3.4
+ * @version 0.3.5
  * @name one-spaces
  */
 (function (global, factory) {
@@ -10,7 +10,7 @@
 }(this, (function () { 'use strict';
 
   function index () {
-      console.log('one-spaces');
+      return arguments;
   }
 
   return index;
