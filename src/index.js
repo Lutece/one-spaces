@@ -1,40 +1,47 @@
-function isString(str) {
-  return typeof str === 'string';
+function OneSpaces() {
+  this.className = '';
 }
 
-function spaceAfterClassName(className) {
-  return className + ' ';
-}
+OneSpaces.prototype.addClassName = function(className) {
+  if (this.className) {
+    this.className += ' ';
+  }
+  this.className += className;
+};
+
+OneSpaces.prototype.setClassNameByArgument = function(argument) {
+  if (argument) {
+    if (typeof argument === 'string') {
+      this.addClassName(argument);
+    } else if (typeof argument === 'object') {
+      this.setClassNameByObject(argument);
+    }
+  }
+};
+
+OneSpaces.prototype.setClassNameByObject = function(argument) {
+  var key;
+  if (Array.isArray(argument)) {
+    key = argument.length;
+    while (key--) {
+      this.setClassNameByArgument(argument[key]);
+    }
+  } else {
+    for (key in argument) {
+      if (argument[key]) {
+        this.addClassName(key);
+      }
+    }
+  }
+};
 
 export default function () {
   var
     i = arguments.length,
-    key,
-    item,
-    argument,
-    className = ''
+    instance = new OneSpaces()
   ;
   while (i--) {
-    if (argument = arguments[i]) {
-      if (typeof argument === 'object') {
-        if (Array.isArray(argument)) {
-          key = argument.length;
-          while (key--) {
-            if ((item = argument[key]) && isString(item)) {
-              className += spaceAfterClassName(item);
-            }
-          }
-        } else {
-          for (key in argument) {
-            if (argument[key]) {
-              className += spaceAfterClassName(key);
-            }
-          }
-        }
-      } else if (isString(argument)) {
-        className += spaceAfterClassName(argument);
-      }
-    }
+    instance.setClassNameByArgument(arguments[i]);
   }
-  return className;
+  return instance.className;
 }
