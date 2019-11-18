@@ -12,13 +12,15 @@
   <script src="../dist/one-spaces.js"></script>
   <script src="./node_modules/classnames/index.js"></script>
   <script src="./node_modules/clsx/dist/clsx.min.js"></script>
+  <script src="./node_modules/classcat/dist/classcat.js"></script>
   <script src="./node_modules/lodash/lodash.js"></script>
   <script src="./node_modules/benchmark/benchmark.js"></script>
   <script>
-    const runTest = function (name, fn) {
+    var runTest = function (name, fn) {
       (new Benchmark.Suite)
-        .add('classnames', function() { fn(classNames); })
         .add('clsx', function() { fn(clsx); })
+        .add('classcat', function() { fn(classcat); })
+        .add('classnames', function() { fn(classNames); })
         .add('one-spaces', function() { fn(OneSpaces); })
         .on('start', function() {
           console.log(
@@ -44,7 +46,11 @@
     };
 
     runTest('arguments', function (fn) {
-      fn('box', 'wrapper', 'container');
+      if (fn === classcat) {
+        fn(['box', 'wrapper', 'container']);
+      } else {
+        fn('box', 'wrapper', 'container');
+      }
     });
     runTest('array', function (fn) {
       fn(['red', 'blue', 'green']);
@@ -57,37 +63,73 @@
       });
     });
     runTest('array arguments', function (fn) {
-      fn(
-        ['red', 'blue', ['yellow']],
-        ['green', []],
-        []
-      );
+      if (fn === classcat) {
+        fn([
+          ['red', 'blue', ['yellow']],
+          ['green', []],
+          []
+        ]);
+      } else {
+        fn(
+          ['red', 'blue', ['yellow']],
+          ['green', []],
+          []
+        );
+      }
     });
     runTest('object arguments', function (fn) {
-      fn({
-        active: true,
-        inactive: false
-      }, {
-        special: true
-      });
-    });
-    runTest('comprehensive', function (fn) {
-      fn(
-        'className',
-        [
-          'red',
-          'blue',
-          ['yellow'],
-          {special: true}
-        ],
-        'classnames',
-        {
+      if (fn === classcat) {
+        fn([{
           active: true,
           inactive: false
-        },
-        undefined,
-        null
-      );
+        }, {
+          special: true
+        }]);
+      } else {
+        fn({
+          active: true,
+          inactive: false
+        }, {
+          special: true
+        });
+      }
+    });
+    runTest('comprehensive', function (fn) {
+      if (fn === classcat) {
+        fn([
+          'className',
+          [
+            'red',
+            'blue',
+            ['yellow'],
+            {special: true}
+          ],
+          'classnames',
+          {
+            active: true,
+            inactive: false
+          },
+          undefined,
+          null
+        ]);
+      } else {
+        fn(
+          'className',
+          [
+            'red',
+            'blue',
+            ['yellow'],
+            {special: true}
+          ],
+          'classnames',
+          {
+            active: true,
+            inactive: false
+          },
+          undefined,
+          null
+        );
+      }
     });
   </script>
   </body>
