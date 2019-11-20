@@ -1,54 +1,45 @@
 /**
  * @author TroyTae
- * @version 1.0.0
+ * @version 1.0.1
  * @name one-spaces
  */
 'use strict';
 
-function isString(argument) {
-  return typeof argument === 'string';
-}
-
-function OneSpaces() {
-  this.className = '';
-}
-
-OneSpaces.prototype.addClass = function(className) {
-  if (this.className) {
-    this.className += ' ';
+function joinClassName(className1, className2) {
+  if (className1) {
+    className1 += ' ';
   }
-  this.className += className;
-};
+  return className1 + className2;
+}
 
 function index () {
   var
     key,
     argument,
     index = arguments.length,
-    instance = new OneSpaces()
+    className = ''
   ;
   while (index--) {
-    if ((argument = arguments[index])) {
-      if (isString(argument)) {
-        instance.addClass(argument);
-      } else if (typeof argument === 'object') {
-        if (Array.isArray(argument) && (key = argument.length)) {
-          while (key--) {
-            if (isString(argument[key])) {
-              instance.addClass(argument[key]);
-            }
+    if (argument = arguments[index]) {
+      if (typeof argument == 'string') {
+        className = joinClassName(className, argument);
+      } else if (Array.isArray(argument)) {
+        key = argument.length;
+        while (key--) {
+          if (argument[key]) {
+            className = joinClassName(className, argument[key]);
           }
-        } else {
-          for (key in argument) {
-            if (argument[key]) {
-              instance.addClass(key);
-            }
+        }
+      } else {
+        for (key in argument) {
+          if (argument[key]) {
+            className = joinClassName(className, key);
           }
         }
       }
     }
   }
-  return instance.className;
+  return className;
 }
 
 module.exports = index;
