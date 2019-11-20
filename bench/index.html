@@ -46,26 +46,14 @@
     startConsole('Array test is stated!');
     runTest(['red', 'blue'], [], ['green']);
 
-    startConsole('Object test is stated!');
-    runTest({
-      active: true,
-      inactive: false
-    }, {
-      special: true
-    }, {
-      none: false
-    });
-
-    startConsole('Comprehensive test is stated!');
+    startConsole('Mix test is stated!');
     runTest(
       'className',
-      {
-        active: true,
-        inactive: false
-      },
+      null,
       [
         'red',
-        'blue'
+        'blue',
+        'green'
       ]
     );
   </script>

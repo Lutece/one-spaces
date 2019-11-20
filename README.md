@@ -2,7 +2,7 @@
 A tiny module for making className 😎
 
 ## Performance
-I wanna create a small and fast module.  
+I wanna create a small and fast library.  
 Please see our [benchmark](./bench/README.md) test result!
 
 ## Installation
@@ -24,25 +24,19 @@ And embed script tag in your document.
 ### arguments
 
 ```javascript
-OneSpacesMin('cls1', 'cls2');
+OneSpacesMin('cls1', 'cls2', 'cls3');
 ```
 
 ### array
 
 ```javascript
-OneSpacesMin(['cls1', 'cls2']);
-```
-
-### object
-
-```javascript
-OneSpacesMin({ cls1: true, cls2: false });
+OneSpacesMin(['cls1', 'cls2'], ['cls3']);
 ```
 
 ### mix
 
 ```javascript
-OneSpacesMin('cls1', { none: false }, ['cls2']);
+OneSpacesMin('cls1', null, ['cls2', 'cls3']);
 ```
 
 ## License
