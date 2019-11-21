@@ -24,19 +24,25 @@ And embed script tag in your document.
 ### arguments
 
 ```javascript
-OneSpacesMin('cls1', 'cls2', 'cls3');
+OneSpaces('cls1', 'cls2');
 ```
 
 ### array
 
 ```javascript
-OneSpacesMin(['cls1', 'cls2'], ['cls3']);
+OneSpaces(['cls1', 'cls2']);
+```
+
+### exclude falsy
+
+```javascript
+OneSpaces(null, true && 'cls1', false && 'cls2');
 ```
 
 ### mix
 
 ```javascript
-OneSpacesMin('cls1', null, ['cls2', 'cls3']);
+OneSpaces('cls1', false && 'none', ['cls2']);
 ```
 
 ## License
