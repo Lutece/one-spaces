@@ -1,16 +1,19 @@
 function OneSpaces() {
   var
-    index = arguments.length,
-    argument,
+    arg,
+    args = arguments,
+    index = args.length,
     className = ''
   ;
   while (index--) {
-    if (argument = arguments[index]) {
-      if (typeof argument == 'string') {
-        className && (className += ' ');
-        className += argument;
-      } else if (Array.isArray(argument)) {
-        className += OneSpaces.apply(null, argument);
+    if (arg = args[index]) {
+      if (className) {
+        className += ' ';
+      }
+      if (Array.isArray(arg)) {
+        className += OneSpaces.apply(null, arg);
+      } else {
+        className += arg;
       }
     }
   }
