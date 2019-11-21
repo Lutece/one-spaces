@@ -1,8 +1,7 @@
 .idea
-node_modules
 
 src
 test
-bench
+node_modules
 
 rollup.config.js

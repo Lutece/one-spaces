@@ -1,9 +1,5 @@
 # One Spaces
-A tiny module for making className 😎
-
-## Performance
-I wanna create a small and fast library.  
-Please see our [benchmark](./bench/README.md) test result!
+A tiny(146B) module for making className 😎
 
 ## Installation
 
