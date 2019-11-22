@@ -1,5 +1,5 @@
 # One Spaces
-A tiny(146B) module for making className 😎
+A tiny(146B) module for making css className 😎
 
 ## Installation
 
@@ -20,25 +20,25 @@ And embed script tag in your document.
 ### arguments
 
 ```javascript
-OneSpaces('cls1', 'cls2');
+OneSpaces('cls1', 'cls2', 'cls3') === 'cls3 cls2 cls1';
 ```
 
 ### array
 
 ```javascript
-OneSpaces(['cls1', 'cls2']);
+OneSpaces(['cls1', 'cls2'], ['cls3']) === 'cls3 cls2 cls1';
 ```
 
 ### exclude falsy
 
 ```javascript
-OneSpaces(null, true && 'cls1', false && 'cls2');
+OneSpaces('cls1', null, 'cls2', false && 'none', true && 'cls3') === 'cls3 cls2 cls1';
 ```
 
 ### mix
 
 ```javascript
-OneSpaces('cls1', false && 'none', ['cls2']);
+OneSpaces(['cls1', 'cls2'], null, 'cls3') === 'cls3 cls2 cls1';
 ```
 
 ## License
