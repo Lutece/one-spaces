@@ -7,17 +7,14 @@ function OneSpaces() {
   ;
   while (index--) {
     if (arg = args[index]) {
-      if (className) {
-        className += ' ';
-      }
-      if (Array.isArray(arg)) {
-        className += OneSpaces.apply(null, arg);
-      } else {
-        className += arg;
-      }
+      className += (
+        Array.isArray(arg) ?
+          OneSpaces.apply(0, arg) :
+          arg + ' '
+      );
     }
   }
   return className;
 }
 
-export default OneSpaces
+export default OneSpaces;
