@@ -8,7 +8,7 @@ function OneSpaces() {
   while (index--) {
     if (arg = args[index]) {
       className += (
-        Array.isArray(arg) ?
+        arg.pop ?
           OneSpaces.apply(0, arg) :
           arg + ' '
       );

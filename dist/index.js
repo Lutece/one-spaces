@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 1.1.0
+ * @version 1.1.1
  * @name one-spaces
  */
 'use strict';
@@ -15,7 +15,7 @@ function OneSpaces() {
   while (index--) {
     if (arg = args[index]) {
       className += (
-        Array.isArray(arg) ?
+        arg.pop ?
           OneSpaces.apply(0, arg) :
           arg + ' '
       );

@@ -1,5 +1,5 @@
 # One Spaces
-A tiny(132B) module for making className 😎
+A tiny(121B) module for making className 😎
 
 ## Installation
 
