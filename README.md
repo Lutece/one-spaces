@@ -1,6 +1,7 @@
+[![npm](https://badge.fury.io/js/one-spaces.svg)](https://www.npmjs.com/package/one-spaces)
+
 # One Spaces
 A tiny(121B) module for making className 😎
-
 ## Installation
 
 ### npm (commonjs)
@@ -17,29 +18,38 @@ And embed script tag in your document.
 
 ## Example
 
-### arguments
+### VanillaJS
 
 ```javascript
-OneSpaces('cls1', 'cls2', 'cls3') === 'cls3 cls2 cls1 '
+var el = document.getElementById('my-element');
+// arguments
+el.className = OneSpaces('cls1', 'cls2', 'cls3');
+// array
+el.className = OneSpaces(['cls1', 'cls2'], ['cls3']);
+// exclude falsy
+el.className = OneSpaces('cls1', null, 'cls2', false && 'none', true && 'cls3');
+// mix
+el.className = OneSpaces(['cls1', 'cls2'], null, 'cls3');
 ```
 
-### array
+### React (jsx)
 
-```javascript
-OneSpaces(['cls1', 'cls2'], ['cls3']) === 'cls3 cls2 cls1 '
+```jsx
+import spaces from 'one-spaces';
+
+export default () => {
+  return (
+    <div className={spaces(['cls1', 'cls2'], null, 'cls3')}>
+      <span>Hello React!</span>
+    </div>
+  );
+};
 ```
 
-### exclude falsy
+### Angular & Vue
 
-```javascript
-OneSpaces('cls1', null, 'cls2', false && 'none', true && 'cls3') === 'cls3 cls2 cls1 '
-```
-
-### mix
-
-```javascript
-OneSpaces(['cls1', 'cls2'], null, 'cls3') === 'cls3 cls2 cls1 '
-```
+Angular and Vue have their own system for className.  
+Of course you can use this module with them but not recommended.
 
 ## License
 MIT © Troy Tae
