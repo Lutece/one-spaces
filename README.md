@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/TroyTae/one-spaces?style=flat-square)](https://github.com/TroyTae/one-spaces/blob/master/LICENSE)
 
 # One Spaces
-A tiny(121B) module for making className 😎
+A tiny(125B) module for making className 😎
 ## Installation
 
 ### npm (commonjs)
@@ -52,6 +52,3 @@ export default () => {
 
 Angular and Vue have their own system for className.  
 Of course you can use this module with them but not recommended.
-
-## License
-MIT © Troy Tae

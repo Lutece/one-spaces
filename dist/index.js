@@ -8,12 +8,11 @@
 function OneSpaces() {
   var
     arg,
-    args = arguments,
-    index = args.length,
-    className = ''
+    className = '',
+    index = arguments.length
   ;
   while (index--) {
-    if (arg = args[index]) {
+    if (arg = arguments[index]) {
       className += (
         arg.pop ?
           OneSpaces.apply(0, arg) :
