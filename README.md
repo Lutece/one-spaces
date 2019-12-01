@@ -1,4 +1,6 @@
-[![npm](https://badge.fury.io/js/one-spaces.svg)](https://www.npmjs.com/package/one-spaces)
+[![size](https://img.shields.io/github/size/TroyTae/one-spaces/dist/one-spaces.js?style=flat-square)](https://github.com/TroyTae/one-spaces/blob/master/dist/one-spaces.js)
+[![npm](https://img.shields.io/npm/v/one-spaces?color=%23fb3e44&style=flat-square)](https://www.npmjs.com/package/one-spaces)
+[![license](https://img.shields.io/github/license/TroyTae/one-spaces?style=flat-square)](https://github.com/TroyTae/one-spaces/blob/master/LICENSE)
 
 # One Spaces
 A tiny(121B) module for making className 😎
