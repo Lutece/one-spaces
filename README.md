@@ -37,12 +37,17 @@ el.className = OneSpaces(['cls1', 'cls2'], null, 'cls3');
 ### React (jsx)
 
 ```jsx
+import React, { useState } from 'react';
 import spaces from 'one-spaces';
+import styles from './Page.css';
 
 export default () => {
+  const [isActive, setActive] = useState(false);
   return (
-    <div className={spaces(['cls1', 'cls2'], null, 'cls3')}>
-      <span>Hello React!</span>
+    <div className={styles.container}>
+      <span className={spaces(styles.text, isActive && styles.active)}>
+        Hello React!
+      </span>
     </div>
   );
 };
