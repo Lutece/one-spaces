@@ -13,9 +13,7 @@ const createConfig = (isNode) => {
       name: pkg.name.split('-').map((v) => v.slice(0, 1).toUpperCase() + v.slice(1)).join(''),
     },
     plugins: [
-      isNode ? null : terser({
-        compress: { loops: false }
-      })
+      isNode ? null : terser()
     ].filter(Boolean)
   };
 };

@@ -1,6 +1,6 @@
 {
   "name": "one-spaces",
-  "version": "1.1.6",
+  "version": "1.2.1",
   "description": "A tiny module for making className 😎",
   "main": "dist/index.js",
   "author": {
