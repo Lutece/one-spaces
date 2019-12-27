@@ -1,9 +1,8 @@
 {
   "name": "one-spaces",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A tiny module for making className 😎",
   "main": "dist/index.js",
-  "homepage": "https://github.com/TroyTae/one-spaces",
   "author": {
     "name": "TroyTae",
     "email": "tjy970721@gmail.com"

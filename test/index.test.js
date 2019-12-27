@@ -1,5 +1,5 @@
 const OneSpaces = require('../dist/index');
-const expectedValue = 'cls3 cls2 cls1 ';
+const expectedValue = 'cls3 cls2 cls1';
 
 test('arguments', () => {
   expect(OneSpaces('cls1', 'cls2', 'cls3')).toBe(expectedValue);

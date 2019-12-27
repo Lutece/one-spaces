@@ -6,10 +6,13 @@ function OneSpaces() {
   ;
   while (index--) {
     if (arg = arguments[index]) {
+      if (className) {
+        className += ' ';
+      }
       className += (
-        arg.pop ?
-          OneSpaces.apply(0, arg) :
-          arg + ' '
+        arg.pop
+          ? OneSpaces.apply(0, arg)
+          : arg
       );
     }
   }
