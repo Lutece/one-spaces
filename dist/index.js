@@ -1,10 +1,8 @@
 /**
  * @author TroyTae
- * @version 1.2.2
+ * @version 1.2.3
  * @name one-spaces
  */
-'use strict';
-
 function OneSpaces() {
   var
     arg,
@@ -26,4 +24,4 @@ function OneSpaces() {
   return className;
 }
 
-module.exports = OneSpaces;
+export default OneSpaces;
