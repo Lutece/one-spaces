@@ -3,6 +3,13 @@ const {terser} = require('rollup-plugin-terser');
 
 const createConfig = (format) => {
   const isBrowser = (format === 'iife');
+  const file = (function() {
+    switch (format) {
+      case 'cjs': return pkg.main;
+      case 'esm': return pkg.module;
+      case 'iife': return `dist/${pkg.name}.js`;
+    }
+  })();
   return {
     input: 'src/index.js',
     output: {
@@ -10,7 +17,7 @@ const createConfig = (format) => {
       compact: isBrowser,
       strict : !isBrowser,
       format: format,
-      file: isBrowser ? `dist/${pkg.name}.js` : pkg.main,
+      file: file,
       name: pkg.name.split('-').map((v) => v.slice(0, 1).toUpperCase() + v.slice(1)).join(''),
     },
     plugins: [
@@ -20,6 +27,7 @@ const createConfig = (format) => {
 };
 
 module.exports = [
+  createConfig('cjs'),
   createConfig('esm'),
   createConfig('iife')
 ];

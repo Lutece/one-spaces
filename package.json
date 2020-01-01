@@ -1,8 +1,9 @@
 {
   "name": "one-spaces",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A tiny module for making className 😎",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "author": {
     "name": "TroyTae",
     "email": "tjy970721@gmail.com"
