@@ -1,9 +1,11 @@
 {
   "name": "one-spaces",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A tiny module for making className 😎",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/TroyTae/one-spaces/blob/master/README.md",
   "author": {
     "name": "TroyTae",
     "email": "tjy970721@gmail.com"
@@ -22,6 +24,11 @@
   },
   "scripts": {
     "build": "rollup --c rollup.config.js"
+  },
+  "directories": {
+    "lib": "dist",
+    "test": "test",
+    "doc": "README.md"
   },
   "license": "MIT",
   "keywords": [
