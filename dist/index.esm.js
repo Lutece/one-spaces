@@ -1,6 +1,6 @@
 /**
  * @author TroyTae
- * @version 1.2.6
+ * @version 1.2.7
  * @name one-spaces
  */
 function OneSpaces() {
