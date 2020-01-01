@@ -1,2 +1,2 @@
-type ArgumentType = string | ArgumentType[];
-export default function(...args: ArgumentType[]): string;
+type ClassName = string | ClassName[];
+export default function(...classNames: ClassName[]): string;
