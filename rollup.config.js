@@ -20,9 +20,7 @@ const createConfig = (format) => {
       file: file,
       name: pkg.name.split('-').map((v) => v.slice(0, 1).toUpperCase() + v.slice(1)).join(''),
     },
-    plugins: [
-      isBrowser ? terser() : null
-    ].filter(Boolean)
+    plugins: [isBrowser ? terser() : null].filter(Boolean)
   };
 };
 
