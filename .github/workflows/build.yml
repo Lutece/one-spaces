@@ -1,4 +1,4 @@
-name: one-spaces build
+name: build
 
 on:
   pull_request:
